@@ -37,3 +37,10 @@ $("form").on("submit", function(event){
     $("#book-genre").val("");
     $("#book-author").val("");
 });
+
+$(document).on('click','#read',function(){
+  myBookList.startCurrentBook();
+  $(this).hide();
+  $('#current').html(myBookList.currentBook.title);
+  $("#current").append('<br><button id="finish" class="btn btn-danger btn-md">Finished!</button>')
+});

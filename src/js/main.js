@@ -50,12 +50,16 @@ BookList.prototype.startCurrentBook = function(first_argument) {
   this.currentBook.startDate = newDate(Date.now());
 };
 
-BookList.prototype.renderToDom = function() {
-  for (var i = 0; i < this.bookArr.length; i++) {
-    $('#books').append('<li>' + this.bookArr[i].title + '</li>');
-  }
+BookList.prototype.renderToDom = function(){
+    for (var i = 0; i < this.bookArr.length; i++) {
+        $("#books").append("<li>" +
+            this.bookArr[i].title +
+            "&nbsp; &nbsp;"+
+            this.bookArr[i].read +
+            "</li>");
+    }
+    $("#books").append("<br><button id='read' class='btn btn-success' btn-xs'>Read Me</button>");
 };
-
 var myBookList = new BookList();
 var book1 = new Book({
   title: 'Labyrinths',
